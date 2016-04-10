@@ -1,0 +1,129 @@
+body {
+ padding-top: 50px;
+}
+.bootstrap-tags ul.tags-suggestion-list {
+    width: 110px;
+}  
+.well {
+  padding: 4px;
+} 
+.thumb-name {
+  padding: 7px;
+  color: #000000
+}
+.blocked {
+    background-color: #EDF2F2;
+}
+.hide-bullets {
+    list-style:none;
+    margin-left: -40px;
+    margin-top:20px;
+}
+.centerBlock {
+                display: table;
+                margin: 0 auto;
+            }
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+.floating-box {
+    display: inline-block;
+}
+.btn { 
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #000000;
+  margin-left: 0;
+}
+.btn-load {
+  padding: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  position: relative;
+  width: 100%;
+  color: #fff;
+}
+.btn-normal {
+  background-color: #8C809C;
+  border-color: #130269;
+}	
+.btn-fighting {
+  background-color: #DB5000;
+  border-color: #8F5C1D;
+}	
+.btn-flying {
+  background-color: #8BA5D9;
+  border-color: #668DC4;
+}	
+.btn-poison { 
+  background-color: #9B76CC; 
+  border-color: #70679C; 
+}
+.btn-ground {
+  background-color: #FFB082;
+  border-color: #eea236;
+}
+.btn-rock {
+  background-color: #BA8686;
+  border-color: #946A30;
+}
+.btn-bug { 
+  background-color: #B3C433; 
+  border-color: #57A12C; 
+}
+.btn-ghost {
+  background-color: #8A0B1A;
+  border-color: #eea236;
+}
+.btn-steel {
+  background-color: #8C7D7D;
+  border-color: #eea236;
+}
+.btn-fire {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.btn-water {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.btn-grass {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.btn-electric {
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+.btn-dark {
+  background-color: #262222;
+  border-color: #eea236;
+}
+.btn-dragon { 
+  background-color: #ED1585; 
+  border-color: #130269; 
+} 
+.btn-ice { 
+  background-color: #1BBDAA; 
+  border-color: #130269; 
+}  
+.btn-fairy { 
+  background-color: #DB48E8; 
+  border-color: #130269; 
+}
+.btn-unknown { 
+  background-color: #629981; 
+  border-color: #130269; 
+}
+.btn-shadow { 
+  background-color: #688779; 
+  border-color: #130269; 
+}
+.btn-psychic { 
+  background-color: #81F009; 
+  border-color: #47A62A; 
+}

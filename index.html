@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Test Task: Pokedex</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-tags.css">
+    <link href="css/style.css" rel="stylesheet">
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header"> 
+                <a class="navbar-brand" href="">Test Task: Pokedex</a>
+            </div> 
+        </div>      
+    </nav>
+    <div class="container">
+        <div id="main_area">
+            <div class="row">
+                <div class="col-sm-7" id="thumbnails_box">
+                  <p style="height: 20px"> </p>
+                  <table width="280">
+                    <tr>
+                    <td>  
+                      <span>Filter:</span>
+                    </td>
+                    <td>  
+                      <div width="60" id="filter-tag-list" class="tag-list"></div>
+                    </td>  
+                    </tr>  
+                  </table>
+                  <p style="height: 10px"> </p>
+                  <input type="button" class="btn btn-primary btn-load" id="process" value="Load More"/>
+                  <div id="thumbnails"></div>
+                </div>
+
+                <div class="col-sm-5" id="cur_pokemon"> 
+                    <p style="height: 120px"> </p>
+                    <div class="well text-center">
+                      <img src="" id="img_details" style="position: relative; width: 180px; height: 180px;">
+                      <table style="width: 100%">
+                        <tr>
+                          <td style="width: 70%">  
+                              <h3 id="cur_pokemon_name" class="text-center"></h3>
+                          </td>    
+                          <td style="width: 30%">
+                              <h3 id="cur_pokemon_id" class="text-left"></h3>
+                          </td>      
+                        </tr>
+                      </table>    
+                      <div id="table_box"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="js/jquery.blockUI.js"></script>
+    <script src='js/bootstrap-tags.min.js'></script>
+    <script src="js/pok_spin.js"></script>
+    <script src="js/pok_filter.js"></script>
+    <script src="js/main.js"></script>
+
+
+    <script id="thumbnails_template" type="text/x-handlebars-template">
+        <ul class="hide-bullets">
+            {{#each pokemons_list}}
+                {{#if visible}}
+                <li class="col-sm-4 col-md-4 col-lg-3 list-unstyled clearfix">
+                    <div class="well">
+                        <a class="thumbnail" id="selector_{{id}}" onClick="return POK.show_pok_details({{id}});">
+                            <img src={{img_src}} class="img-thumbnail img-responsive" width="100px" height="100px" id="img_selector_{{id}}">
+                            <div class="thumb-name text-center" id="selName_{{id}}">{{name}}</div>
+
+                            <div class="row">
+                              {{#each type_set}}
+                                {{#if @first }}
+                                  <div class="col-sm-6 text-center text-capitalize">
+                                    {{#makeTypeButton ../../types}}
+                                    {{type_name}}
+                                    {{/makeTypeButton}}
+                                  </div>
+                                {{else}}
+                                  <div class="col-sm-6 text-center text-capitalize">
+                                    {{#makeTypeButton ../../types}}
+                                    {{type_name}}
+                                    {{/makeTypeButton}}
+                                  </div>
+                                {{/if}}
+                              {{/each}}
+                            </div>
+                        </a>
+                    </div>
+                </li>
+              {{/if}}
+            {{/each}}
+        </ul>
+    </script>
+
+    <script id="details_template" type="x-tmpl-mustache">
+        <table class="table table-bordered table-condensed">
+          <tbody>
+            {{#charact_set}}
+            <tr>
+              <td align="center">{{ name }}</td>
+              <td align="center">{{ value }}</td>
+            </tr>
+            {{/charact_set}}
+          </tbody>
+        </table>
+    </script>
+  </body>
+</html>
